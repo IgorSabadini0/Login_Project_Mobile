@@ -57,7 +57,7 @@ export default function Login() {
             </View>
             <View style={style.boxMid}>
 
-                <Text style={style.titleInput}>ENDEREÇO DE E-MAIL</Text>
+                {/* <Text style={style.titleInput}>ENDEREÇO DE E-MAIL</Text>
                 <View style={style.boxInput}>
                     <TextInput
                         style={style.input}
@@ -70,7 +70,7 @@ export default function Login() {
                         size={20}
                         color={themas.colors.gray}
                     />
-                </View>
+                </View> */}
                 <Text style={style.titleInput}>SENHA</Text>
                 <View style={style.boxInput}>
                     <TextInput

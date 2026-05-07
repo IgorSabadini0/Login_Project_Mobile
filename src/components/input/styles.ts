@@ -18,4 +18,9 @@ export const style = StyleSheet.create({
         height: '100%',
         width: '90%'
     },
+    titleInput: {
+        marginLeft: 5,
+        color: themas.colors.gray,
+        marginTop: 20,
+    },
 });
