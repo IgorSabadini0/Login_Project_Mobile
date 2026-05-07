@@ -1,6 +1,8 @@
 import React, { forwardRef, LegacyRef } from "react";
 import { TextInputProps, TextInput, View } from "react-native";
 import { MaterialIcons, FontAwesome, Octicons } from "@expo/vector-icons";
+import { style } from "./styles"
+import { themas } from "../../global/themes";
 
 type iconComponent = React.ComponentType<React.ComponentProps<typeof MaterialIcons>> |
     React.ComponentType<React.ComponentProps<typeof FontAwesome>> |
@@ -18,5 +20,17 @@ type Props = TextInputProps & {
 };
 
 export const Input = forwardRef((Props: Props, ref: LegacyRef<TextInput> | null) => {
-    return
+    return (
+        <View style={style.boxInput}>
+            <TextInput
+                style={style.input}
+            />
+
+            <MaterialIcons
+                name="email"
+                size={20}
+                color={themas.colors.gray}
+            />
+        </View>
+    );
 });
