@@ -1,5 +1,5 @@
 import React, { forwardRef, Fragment, LegacyRef } from "react";
-import { TextInputProps, Text, TextInput, View, TouchableOpacity} from "react-native";
+import { TextInputProps, Text, TextInput, View, TouchableOpacity } from "react-native";
 import { MaterialIcons, FontAwesome, Octicons } from "@expo/vector-icons";
 import { style } from "./styles"
 import { themas } from "../../global/themes";
@@ -10,8 +10,8 @@ type iconComponent = React.ComponentType<React.ComponentProps<typeof MaterialIco
 
 // Define as propriedades que o seu Input vai aceitar
 type Props = TextInputProps & {
-    IconLeft: iconComponent,
-    IconRight: iconComponent,
+    IconLeft?: iconComponent,
+    IconRight?: iconComponent,
     IconLeftName?: string,
     IconRightName?: string,
     title?: string,
@@ -26,9 +26,17 @@ export const Input = forwardRef<TextInput, Props>((Props, Ref) => {
             <Text style={style.titleInput}>ENDEREÇO DE E-MAIL</Text>
             <View style={style.boxInput}>
 
-                <TouchableOpacity>
-                    <IconLeft name={IconLeftName as any} size={20} color={themas.colors.gray} style={style.icon}/>
-                </TouchableOpacity>
+                {IconLeft && IconLeftName && (
+                    <TouchableOpacity style={style.button} onPress={onIconLeftPress}>
+                        <IconLeft name={IconLeftName as any} size={20} color={themas.colors.gray} style={style.icon} />
+                    </TouchableOpacity>
+                )};
+
+                {IconRight && IconRightName && (
+                    <TouchableOpacity style={style.button} onPress={onIconRightPress}>
+                        <IconRight name={IconRightName as any} size={20} color={themas.colors.gray} style={style.icon} />
+                    </TouchableOpacity>
+                )};
 
                 <Text></Text>
                 <TextInput
