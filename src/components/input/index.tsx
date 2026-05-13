@@ -1,5 +1,5 @@
 import React, { forwardRef, Fragment, LegacyRef } from "react";
-import { TextInputProps, Text, TextInput, View } from "react-native";
+import { TextInputProps, Text, TextInput, View, TouchableOpacity} from "react-native";
 import { MaterialIcons, FontAwesome, Octicons } from "@expo/vector-icons";
 import { style } from "./styles"
 import { themas } from "../../global/themes";
@@ -19,12 +19,17 @@ type Props = TextInputProps & {
     onIconRightPress?: () => void,
 };
 
-export const Input = forwardRef((Props: Props, ref: LegacyRef<TextInput> | null) => {
+export const Input = forwardRef<TextInput, Props>((Props, Ref) => {
     const { iconLeft, iconRight, iconLeftName, iconRightName, onIconLeftPress, onIconRightPress, title, ...rest } = Props;
     return (
         <Fragment>
             <Text style={style.titleInput}>ENDEREÇO DE E-MAIL</Text>
             <View style={style.boxInput}>
+
+                <TouchableOpacity>
+                    
+                </TouchableOpacity>
+
                 <Text></Text>
                 <TextInput
                     style={style.input}
