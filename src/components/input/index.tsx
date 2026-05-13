@@ -10,24 +10,24 @@ type iconComponent = React.ComponentType<React.ComponentProps<typeof MaterialIco
 
 // Define as propriedades que o seu Input vai aceitar
 type Props = TextInputProps & {
-    iconLeft?: iconComponent,
-    iconRight?: iconComponent,
-    iconLeftName?: string,
-    iconRightName?: string,
+    IconLeft: iconComponent,
+    IconRight: iconComponent,
+    IconLeftName?: string,
+    IconRightName?: string,
     title?: string,
     onIconLeftPress?: () => void,
     onIconRightPress?: () => void,
 };
 
 export const Input = forwardRef<TextInput, Props>((Props, Ref) => {
-    const { iconLeft, iconRight, iconLeftName, iconRightName, onIconLeftPress, onIconRightPress, title, ...rest } = Props;
+    const { IconLeft, IconRight, IconLeftName, IconRightName, onIconLeftPress, onIconRightPress, title, ...rest } = Props;
     return (
         <Fragment>
             <Text style={style.titleInput}>ENDEREÇO DE E-MAIL</Text>
             <View style={style.boxInput}>
 
                 <TouchableOpacity>
-                    
+                    <IconLeft name={IconLeftName as any} size={20} color={themas.colors.gray} style={style.icon}/>
                 </TouchableOpacity>
 
                 <Text></Text>
