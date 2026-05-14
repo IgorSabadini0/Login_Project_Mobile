@@ -16,6 +16,7 @@ import Logo from '../../assets/logo_etec.png';
 import { MaterialIcons, Entypo, Octicons } from "@expo/vector-icons";
 import { themas } from "../../global/themes";
 import { Input } from "../../components/input";
+import { Button } from "../../components/button";
 
 
 export default function Login() {
@@ -70,22 +71,16 @@ export default function Login() {
                 <Input
                     title="SENHA"
                     IconRight={Octicons}
-                    IconRightName={showPassword ? "eye-closed" : "eye"}
+                    IconRightName={showPassword?"eye-closed":"eye"}
                     secureTextEntry={showPassword}
                     onChangeText={setPassword}
-                    onIconRightPress={() => setShowPassword(!showPassword)}
+                    onIconRightPress={()=>setShowPassword(!showPassword)}
                 />
 
             </View>
 
             <View style={style.boxBottom}>
-                <TouchableOpacity style={style.button} onPress={() => getLogin()}>
-                    {loading ? <ActivityIndicator color={'#ffff'} size={'small'} />
-                        :
-                        <Text style={style.textButton}>Entrar</Text>
-                    }
-
-                </TouchableOpacity>
+                <Button text="Entrar" loading={loading} onPress={() => getLogin()} />
             </View>
             <Text style={style.textBottom}>Não tem conta?
                 <Text style={{ color: themas.colors.primary }}>Crie Agora</Text>
