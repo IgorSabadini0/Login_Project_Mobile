@@ -27,13 +27,13 @@ export const Input = forwardRef<TextInput, Props>((Props, Ref) => {
             <View style={style.boxInput}>
 
                 {IconLeft && IconLeftName && (
-                    <TouchableOpacity style={style.button} onPress={onIconLeftPress}>
+                    <TouchableOpacity style={style.icon} onPress={onIconLeftPress}>
                         <IconLeft name={IconLeftName as any} size={20} color={themas.colors.gray} style={style.icon} />
                     </TouchableOpacity>
                 )}
 
                 {IconRight && IconRightName && (
-                    <TouchableOpacity style={style.button} onPress={onIconRightPress}>
+                    <TouchableOpacity style={style.icon} onPress={onIconRightPress}>
                         <IconRight name={IconRightName as any} size={20} color={themas.colors.gray} style={style.icon} />
                     </TouchableOpacity>
 
