@@ -24,7 +24,8 @@ export const style = StyleSheet.create({
         marginTop: 20,
     },
     icon: {
-        width: "100%"
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     button: {
         width: 200,

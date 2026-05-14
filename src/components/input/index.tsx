@@ -43,12 +43,6 @@ export const Input = forwardRef<TextInput, Props>((Props, Ref) => {
                     style={style.input}
                     {...rest}
                 />
-
-                <MaterialIcons
-                    name="email"
-                    size={20}
-                    color={themas.colors.gray}
-                />
             </View>
         </Fragment>
     )
