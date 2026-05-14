@@ -8,7 +8,7 @@ export const style = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 40,
         marginTop: 10,
-        flexDirection: 'row',
+        flexDirection: 'row-reverse', // Icones na esquerda é necessário inverter a direção (row)
         alignItems: 'center',
         paddingHorizontal: 10,
         backgroundColor: themas.colors.lightgray,

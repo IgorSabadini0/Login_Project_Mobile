@@ -25,22 +25,24 @@ export const Input = forwardRef<TextInput, Props>((Props, Ref) => {
         <Fragment>
             <Text style={style.titleInput}>ENDEREÇO DE E-MAIL</Text>
             <View style={style.boxInput}>
-
-                {IconLeft && IconLeftName && (
+                {/* Mova os ícones para aqui (Início da linha) */}
+                {IconLeft && (
                     <TouchableOpacity style={style.icon} onPress={onIconLeftPress}>
                         <IconLeft name={IconLeftName as any} size={20} color={themas.colors.gray} style={style.icon} />
                     </TouchableOpacity>
                 )}
 
-                {IconRight && IconRightName && (
+                {IconRight && (
                     <TouchableOpacity style={style.icon} onPress={onIconRightPress}>
                         <IconRight name={IconRightName as any} size={20} color={themas.colors.gray} style={style.icon} />
                     </TouchableOpacity>
-
                 )}
 
+                {/* O TextInput vem depois, ocupando o resto do espaço à direita */}
                 <TextInput
-                    style={style.input}
+                    style={[
+                        style.input,
+                    ]}
                     {...rest}
                 />
             </View>
