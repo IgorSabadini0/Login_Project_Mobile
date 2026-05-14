@@ -30,17 +30,18 @@ export const Input = forwardRef<TextInput, Props>((Props, Ref) => {
                     <TouchableOpacity style={style.button} onPress={onIconLeftPress}>
                         <IconLeft name={IconLeftName as any} size={20} color={themas.colors.gray} style={style.icon} />
                     </TouchableOpacity>
-                )};
+                )}
 
                 {IconRight && IconRightName && (
                     <TouchableOpacity style={style.button} onPress={onIconRightPress}>
                         <IconRight name={IconRightName as any} size={20} color={themas.colors.gray} style={style.icon} />
                     </TouchableOpacity>
-                )};
 
-                <Text></Text>
+                )}
+
                 <TextInput
                     style={style.input}
+                    {...rest}
                 />
 
                 <MaterialIcons
@@ -50,5 +51,5 @@ export const Input = forwardRef<TextInput, Props>((Props, Ref) => {
                 />
             </View>
         </Fragment>
-    );
+    )
 });

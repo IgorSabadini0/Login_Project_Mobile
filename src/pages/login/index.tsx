@@ -13,13 +13,15 @@ import {
 
 import { style } from "./styles";
 import Logo from '../../assets/logo_etec.png';
-import { MaterialIcons, Entypo } from "@expo/vector-icons";
+import { MaterialIcons, Entypo, Octicons } from "@expo/vector-icons";
 import { themas } from "../../global/themes";
+import { Input } from "../../components/input";
 
 
 export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(true);
     const [loading, setLoading] = useState(false);
 
     async function getLogin() {
@@ -57,34 +59,22 @@ export default function Login() {
             </View>
             <View style={style.boxMid}>
 
-                {/* <Text style={style.titleInput}>ENDEREÇO DE E-MAIL</Text>
-                <View style={style.boxInput}>
-                    <TextInput
-                        style={style.input}
-                        value={email}
-                        onChangeText={setEmail}
-                    />
+                <Input
+                    value={email}
+                    onChangeText={setEmail}
+                    title="ENDEREÇO DE E-MAIL"
+                    IconRight={MaterialIcons}
+                    IconRightName="email"
+                />
 
-                    <MaterialIcons
-                        name="email"
-                        size={20}
-                        color={themas.colors.gray}
-                    />
-                </View> */}
-                <Text style={style.titleInput}>SENHA</Text>
-                <View style={style.boxInput}>
-                    <TextInput
-                        style={style.input}
-                        value={password}
-                        onChangeText={setPassword}
-                    />
-
-                    <Entypo
-                        name="eye"
-                        size={20}
-                        color={themas.colors.gray}
-                    />
-                </View>
+                <Input
+                    title="SENHA"
+                    IconRight={Octicons}
+                    IconRightName={showPassword ? "eye-closed" : "eye"}
+                    secureTextEntry={showPassword}
+                    onChangeText={setPassword}
+                    onIconRightPress={() => setShowPassword(!showPassword)}
+                />
 
             </View>
 
