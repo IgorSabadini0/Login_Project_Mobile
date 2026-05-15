@@ -32,11 +32,6 @@ export const Input = forwardRef<TextInput, Props>((Props, Ref) => {
                     </TouchableOpacity>
                 )}
 
-                {IconRight && (
-                    <TouchableOpacity style={style.icon} onPress={onIconRightPress}>
-                        <IconRight name={IconRightName as any} size={20} color={themas.colors.gray} style={style.icon} />
-                    </TouchableOpacity>
-                )}
 
                 {/* O TextInput vem depois, ocupando o resto do espaço à direita */}
                 <TextInput
@@ -45,6 +40,11 @@ export const Input = forwardRef<TextInput, Props>((Props, Ref) => {
                     ]}
                     {...rest}
                 />
+                {IconRight && (
+                    <TouchableOpacity style={style.icon} onPress={onIconRightPress}>
+                        <IconRight name={IconRightName as any} size={20} color={themas.colors.gray} style={style.icon} />
+                    </TouchableOpacity>
+                )}
             </View>
         </Fragment>
     )

@@ -71,12 +71,11 @@ export default function Login() {
                 <Input
                     title="SENHA"
                     IconRight={Octicons}
-                    IconRightName={showPassword?"eye-closed":"eye"}
+                    IconRightName={showPassword ? "eye-closed" : "eye"}
                     secureTextEntry={showPassword}
                     onChangeText={setPassword}
-                    onIconRightPress={()=>setShowPassword(!showPassword)}
+                    onIconRightPress={() => setShowPassword(!showPassword)}
                 />
-
             </View>
 
             <View style={style.boxBottom}>
