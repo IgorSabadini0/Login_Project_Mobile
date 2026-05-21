@@ -1,14 +1,34 @@
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
-import { } from "@expo/vector-icons";
+import { AntDesign, FontAwesome } from "@expo/vector-icons";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
+import { style } from "./styles";
+import { themas } from "../../global/themes";
 
 const CustomTabBar: React.FC<BottomTabBarProps> = (props) => {
     const { state, descriptors, navigation } = props;
 
+    const go = (screenName: string) => {
+        navigation.navigate(screenName);
+    }
+
     return (
-        <View style={{ flexDirection: "row", height: 60, backgroundColor: "#fff" }}>
-            <TouchableOpacity></TouchableOpacity>
-        </View>
+        <View style={style.tabBar}>
+            {/* 1º Item da Lista */}
+            <TouchableOpacity onPress={() => go("List")} style={style.tabItem}>
+                <AntDesign name="bars" size={24} style={{ opacity: state.index === 0 ? 1 : 0.2, color: themas.colors.primary, fontSize: 32 }}></AntDesign>
+            </TouchableOpacity>
+
+            {/* Botão Central */}
+            <View style={style.centerWrapper}>
+
+            </View>
+
+            <TouchableOpacity onPress={() => go("User")}>
+                <FontAwesome name="user" size={24} style={{ opacity: state.index === 0 ? 1 : 0.2, color: themas.colors.primary, fontSize: 32 }} >
+
+                </FontAwesome>
+            </TouchableOpacity>
+        </View >
     )
 }
