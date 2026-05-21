@@ -1,5 +1,5 @@
 import React from "react";
-import { Touchable, TouchableOpacity, View, Text, TouchableHighlightProps, ActivityIndicator } from "react-native";
+import { TouchableOpacity, View, Text, TouchableHighlightProps, ActivityIndicator } from "react-native";
 import { style } from "./styles";
 
 type Props = TouchableHighlightProps & {
@@ -12,6 +12,7 @@ export function Button({ ...rest }: Props) {
         <TouchableOpacity
             style={style.button}
             activeOpacity={0.6}
+            {...rest}
         >
             {rest.loading ?
                 <ActivityIndicator />

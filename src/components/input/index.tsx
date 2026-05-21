@@ -23,7 +23,7 @@ export const Input = forwardRef<TextInput, Props>((Props, Ref) => {
     const { IconLeft, IconRight, IconLeftName, IconRightName, onIconLeftPress, onIconRightPress, title, ...rest } = Props;
     return (
         <Fragment>
-            <Text style={style.titleInput}>ENDEREÇO DE E-MAIL</Text>
+            <Text style={style.titleInput}>{title}</Text>
             <View style={style.boxInput}>
                 {/* Mova os ícones para aqui (Início da linha) */}
                 {IconLeft && (
@@ -35,6 +35,7 @@ export const Input = forwardRef<TextInput, Props>((Props, Ref) => {
 
                 {/* O TextInput vem depois, ocupando o resto do espaço à direita */}
                 <TextInput
+                    ref={Ref}
                     style={[
                         style.input,
                     ]}
