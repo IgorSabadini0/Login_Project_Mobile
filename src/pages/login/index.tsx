@@ -26,25 +26,28 @@ export default function Login() {
     const [loading, setLoading] = useState(false);
 
     async function getLogin() {
+        setLoading(true); // Inicia o loading
+
         try {
-            setLoading(true);
             if (!email || !password) {
-                return Alert.alert('Atenção', 'Digite os campos obrigatórios');
+                Alert.alert('Atenção', 'Digite os campos obrigatórios');
+                setLoading(false); // Desativa o loading antes de parar a função
+                return;
             }
 
             setTimeout(() => {
-                if (email == 'mauricioaneves@terra.com.br' && password == '1234') {
-                    Alert.alert('Sucesso', 'Logado com Suceso');
+                if (email === 'mauricioaneves@terra.com.br' && password === '1234') {
+                    Alert.alert('Sucesso', 'Logado com Sucesso');
                 } else {
                     Alert.alert('Erro', 'Usuário não encontrado');
                 }
-                setLoading(false);
+                setLoading(false); // Desativa ao finalizar
             }, 3000);
 
         } catch (error) {
             Alert.alert('Erro', 'Erro ao Logar');
+            setLoading(false); // Garante que não fica a carregar caso dê um erro crítico
         }
-
     }
 
     return (
