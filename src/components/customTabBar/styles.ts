@@ -16,11 +16,26 @@ export const style = StyleSheet.create({
         alignItems: "center"
     },
     centerWrapper: {
-
+        flex: 1,
+        alignItems: "center"
     },
     iconRow: {
         flexDirection: "row",
         alignItems: "center",
         gap: 6,
+    },
+    centerButtonContainer: {
+        width: 70,
+        height: 70,
+        borderRadius: 35,
+        backgroundColor: "#007AFF",
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: -30,
+        elevation: 8,
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 3 },
+        shadowOpacity: 0.25,
+        shadowRadius: 4
     }
 });

@@ -21,12 +21,11 @@ const CustomTabBar: React.FC<BottomTabBarProps> = (props) => {
 
             {/* Botão Central */}
             <View style={style.centerWrapper}>
-
+                <TouchableOpacity onPress={() => navigation.navigate("Middle")} style={style.centerButtonContainer}></TouchableOpacity>
             </View>
 
             <TouchableOpacity onPress={() => go("User")}>
                 <FontAwesome name="user" size={24} style={{ opacity: state.index === 0 ? 1 : 0.2, color: themas.colors.primary, fontSize: 32 }} >
-
                 </FontAwesome>
             </TouchableOpacity>
         </View >
